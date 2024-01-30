@@ -1,0 +1,43 @@
+:root {
+  --bgcolor: #161e3a;
+  --highlightcolor: #363748;
+  --gradient: linear-gradient(#282c42, #595457);
+}
+* {
+  font-family: "Inter", sans-serif;
+}
+.bg-darkBlue {
+  background: var(--bgcolor);
+}
+.text-menu {
+  color: #e5e5e5;
+  font-size: 0.6em;
+}
+.icon-menu {
+  cursor: pointer;
+  width: 20%;
+}
+.icon-active {
+  transform: scale(1.2) translateY(-5px);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.252);
+}
+.bg-cafe {
+  background-image: linear-gradient(#282c42a3, #14162c),
+    url(./Public/images/bg-header.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.glow-lg {
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.213));
+}
+.bg-category {
+  background-color: var(--highlightcolor);
+  transition: all 300ms;
+}
+.category:hover {
+  cursor: pointer;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.213);
+}
+.pos-up-2 {
+  transform: translateY(-20px);
+}
