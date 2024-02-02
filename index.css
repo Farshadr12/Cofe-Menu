@@ -1,7 +1,7 @@
 :root {
   --bgcolor: #161e3a;
   --highlightcolor: #363748;
-  --gradient: linear-gradient(#282c42, #595457);
+  --gradient: linear-gradient(270deg, #282c42, #595457);
 }
 * {
   font-family: "Inter", sans-serif;
@@ -18,8 +18,16 @@
   width: 20%;
 }
 .icon-active {
-  transform: scale(1.2) translateY(-5px);
   text-shadow: 0 0 20px rgba(255, 255, 255, 0.252);
+  animation: iconTransition 200ms forwards;
+}
+@keyframes iconTransition {
+  0% {
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    transform: scale(1.1) translateY(0);
+  }
 }
 .bg-cafe {
   background-image: linear-gradient(#282c42a3, #14162c),
@@ -42,7 +50,7 @@
   transform: translateY(-20px);
 }
 .bg-grad-item {
-  background-image: linear-gradient(270deg, #282c42, #595457);
+  background-image: var(--gradient);
 }
 .items:last-child {
   margin-bottom: 100px;
@@ -57,29 +65,43 @@
 .talk-bubble {
   display: inline-block;
   position: relative;
-	width: 90%;
-	height: auto;
-	background-color: var(--highlightcolor);
+  width: 90%;
+  height: auto;
+  background-image: var(--gradient);
 }
-.talktext{
+.talktext {
   padding: 1em;
-	text-align: left;
+  text-align: left;
   line-height: 1.5em;
 }
-.talktext p{
+.talktext p {
   /* remove webkit p margins */
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
 }
 .tri-right.border.btm-left:before {
-	content: ' ';
-	position: re;
-	width: 0;
-	height: 0;
-	left: -8px;
+  content: " ";
+  position: re;
+  width: 0;
+  height: 0;
+  left: -8px;
   right: auto;
   top: auto;
-	bottom: -40px;
-	border: 32px solid;
-	border-color: transparent transparent transparent #666;
+  bottom: -40px;
+  border: 32px solid;
+  border-color: transparent transparent transparent #666;
+}
+.fadein {
+  display: inherit;
+  animation: fadeAnim 300ms forwards;
+}
+@keyframes fadeAnim {
+  0% {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -29,27 +29,26 @@
   <body class="bg-darkBlue text-white text-center">
     <header
       class="d-flex bg-darkBlue justify-content-around fixed-bottom pb-3 border-dark border-top pt-3">
-      <div class="icon-menu d-flex flex-column">
+      <div id="navabout" class="icon-menu d-flex flex-column">
         <span class="material-symbols-outlined text-white">
           question_mark
         </span>
-        <a href class="text-decoration-none text-menu">About Us</a>
+        <p class="text-decoration-none text-menu">About Us</p>
       </div>
-      <div class="icon-menu d-flex flex-column icon-active">
+      <div id="navItems" class="icon-menu d-flex flex-column icon-active">
         <span class="material-symbols-outlined text-white">
           menu_book
         </span>
-        <a href class="text-decoration-none text-menu">Items</a>
+        <p class="text-decoration-none text-menu">Items</p>
       </div>
-      <div class="icon-menu d-flex flex-column">
-        <span class="material-symbols-outlined text-white"
-          onclick="NavtoComments()">
+      <div id="navComments" class="icon-menu d-flex flex-column">
+        <span class="material-symbols-outlined text-white">
           comment
         </span>
-        <a href class="text-decoration-none text-menu">Comments</a>
+        <p class="text-decoration-none text-menu">Comments</p>
       </div>
     </header>
-    <main class="d-none" id="main">
+    <main class="d-inherate fadein" id="main">
       <div class="container bg-cafe">
         <div class="logo-container">
           <img src="./Public/images/logo.png" alt="logo cafe"
@@ -151,7 +150,7 @@
         </div>
       </div>
     </main>
-    <div class="comments d-none" id="comments">
+    <div class="comments d-none fadein" id="comments">
       <div class="container mt-4">
         <div
           class="talk-bubble tri-right text-end rounded-4 shadow-lg btm-left">
@@ -220,11 +219,26 @@
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"></script>
     <script>
-        let menuState = document.getElementById('comments')
-        function NavtoComments() {
-          menuState.classList.replace('d-none','d-flex')
-          console.log('Test Done')
-        }
+      
+      let displayComments = document.getElementById('comments');
+      let displayMain = document.getElementById('main');
+      let mainBtn = document.getElementById('navItems');
+      let commentsBtn = document.getElementById('navComments')
+        document.getElementById("navComments").addEventListener("click", function() {
+          displayMain.classList.replace('d-inherate','d-none');
+          displayComments.classList.replace('d-none','d-flex');
+        
+          mainBtn.classList.remove('icon-active');
+          commentsBtn.classList.add('icon-active');
+        })
+
+          document.getElementById("navItems").addEventListener("click", function() {
+          displayMain.classList.replace('d-none','d-inherate');
+          displayComments.classList.replace('d-flex','d-none');
+        
+          mainBtn.classList.add('icon-active');
+          commentsBtn.classList.remove('icon-active');
+        })
       </script>
 
   </body>
