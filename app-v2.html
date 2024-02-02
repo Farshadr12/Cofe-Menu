@@ -218,28 +218,6 @@
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
       integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
       crossorigin="anonymous"></script>
-    <script>
-      
-      let displayComments = document.getElementById('comments');
-      let displayMain = document.getElementById('main');
-      let mainBtn = document.getElementById('navItems');
-      let commentsBtn = document.getElementById('navComments')
-        document.getElementById("navComments").addEventListener("click", function() {
-          displayMain.classList.replace('d-inherate','d-none');
-          displayComments.classList.replace('d-none','d-flex');
-        
-          mainBtn.classList.remove('icon-active');
-          commentsBtn.classList.add('icon-active');
-        })
-
-          document.getElementById("navItems").addEventListener("click", function() {
-          displayMain.classList.replace('d-none','d-inherate');
-          displayComments.classList.replace('d-flex','d-none');
-        
-          mainBtn.classList.add('icon-active');
-          commentsBtn.classList.remove('icon-active');
-        })
-      </script>
-
+    <script src="./scripts.js"></script>
   </body>
 </html>
