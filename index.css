@@ -54,3 +54,32 @@
   box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.213);
   transition: all 300ms;
 }
+.talk-bubble {
+  display: inline-block;
+  position: relative;
+	width: 90%;
+	height: auto;
+	background-color: var(--highlightcolor);
+}
+.talktext{
+  padding: 1em;
+	text-align: left;
+  line-height: 1.5em;
+}
+.talktext p{
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
+}
+.tri-right.border.btm-left:before {
+	content: ' ';
+	position: re;
+	width: 0;
+	height: 0;
+	left: -8px;
+  right: auto;
+  top: auto;
+	bottom: -40px;
+	border: 32px solid;
+	border-color: transparent transparent transparent #666;
+}
